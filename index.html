@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Data Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hero Data Management</h1>
+
+        <div class="section">
+            <h2>1. Load Database</h2>
+            <button id="loadDbButton">Load Hero Database</button>
+            <div id="heroListSummary">
+                <p>Database not loaded yet. Click "Load Hero Database".</p>
+                <ul id="heroList"></ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Input Hero Data & Process</h2>
+            <div>
+                <label for="heroIdInput">Hero ID (mandatory, e.g., "johanna"):</label>
+                <input type="text" id="heroIdInput" placeholder="johanna">
+            </div>
+            <div>
+                <label for="heroNameInput">Hero Name (e.g., "Johanna"):</label>
+                <input type="text" id="heroNameInput" placeholder="Johanna">
+            </div>
+            <div>
+                <label for="rawTextInput">Paste Raw Hero Text:</label>
+                <textarea id="rawTextInput" rows="10" placeholder="Paste raw hero information here..."></textarea>
+            </div>
+            <button id="processAiButton">Process with AI</button>
+        </div>
+
+        <div class="section" id="reviewSection" style="display: none;">
+            <h2>3. Review and Merge Data</h2>
+            <div class="data-display">
+                <div class="data-column">
+                    <h3>Existing Hero Data (if any)</h3>
+                    <pre id="existingHeroDataDisplay">No existing data found for this Hero ID, or AI processing not yet run.</pre>
+                </div>
+                <div class="data-column">
+                    <h3>AI Parsed Hero Data</h3>
+                    <pre id="parsedHeroDataDisplay">AI processing not yet run.</pre>
+                </div>
+            </div>
+            <div id="actionButtons">
+                <button id="addAsNewButton" style="display:none;">Add as New Hero</button>
+                <button id="updateExistingButton" style="display:none;">Update Existing Hero</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Save Database</h2>
+            <button id="saveDbButton" disabled>Save Database to File</button>
+        </div>
+
+        <div id="feedbackArea" class="feedback"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
